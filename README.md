@@ -2,6 +2,7 @@
 Appstore Search Tab Demo
 
 [![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
+[![Build Status](https://travis-ci.org/hsleedevelop/SearchAppstoreDemo.svg?branch=master)](https://travis-ci.org/hsleedevelop/SearchAppstoreDemo)
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Features

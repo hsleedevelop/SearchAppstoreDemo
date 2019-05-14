@@ -11,8 +11,9 @@ env:
     - WORKSPACE="SearchAppstore.xcworkspace"
     - IOS_SDK="iphonesimulator12.1"
     - IOS_DESTINATION="platform=iOS Simulator,name=iPhone XS,OS=12.1"
- matrix:
-   - SCHEME="SearchAppstore"        SDK="$IOS_SDK"      ACTION="test"
+    - SCHEME="SearchAppstore"
+#  matrix:
+#    - SCHEME="SearchAppstore"        SDK="$IOS_SDK"      ACTION="test"
 
 install:
   - bundle install
@@ -20,7 +21,4 @@ install:
   - bundle exec pod install
 
 script:
-  - set -o pipefail && xcodebuild clean $ACTION -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$IOS_DESTINATION" -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - set -o pipefail && xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$IOS_DESTINATION" -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
