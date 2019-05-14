@@ -11,8 +11,8 @@ env:
     - WORKSPACE="SearchAppstore.xcworkspace"
     - IOS_SDK="iphonesimulator12.1"
     - IOS_DESTINATION="platform=iOS Simulator,name=iPhone XS,OS=12.1"
-#  matrix:
-#    - SCHEME="SearchAppstore"        SDK="$IOS_SDK"      ACTION="test"
+ matrix:
+   - SCHEME="SearchAppstore"        SDK="$IOS_SDK"      ACTION="test"
 
 install:
   - bundle install
